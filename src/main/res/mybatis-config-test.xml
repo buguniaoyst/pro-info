@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<!--jdbc相关配置-->
+	<properties resource="jdbc.properties"></properties>
+
+	<settings>
+		<!--开启驼峰的自动映射-->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<typeAliases>
+		<!--定义别名-->
+		<typeAlias type="cn.itcast.pro.domain.User" alias="User"></typeAlias>
+		<typeAlias type="cn.itcast.pro.domain.Model" alias="Model"></typeAlias>
+		<typeAlias type="cn.itcast.pro.domain.ModelItem" alias="ModelItem"></typeAlias>
+	</typeAliases>
+
+	<!--配置mybatis环境-->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driverClassName}"></property>
+				<property name="url" value="${jdbc.url}"></property>
+				<property name="username" value="${jdbc.username}"></property>
+				<property name="password" value="${jdbc.password}"></property>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="UserMapper.xml"></mapper>
+		<mapper resource="mybatis/mappers/ModelMapper.xml"></mapper>
+		<mapper resource="mybatis/mappers/ModelItemMapper.xml"></mapper>
+	</mappers>
+</configuration>

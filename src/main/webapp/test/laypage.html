@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui/css/layui.css"  media="all">
+    <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+</head>
+<body>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>开门见山 ： 默认分页</legend>
+</fieldset>
+
+<div id="demo1"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>自定义主题 ： 赤橙黄绿青蓝紫 神马的，随便设:-O</legend>
+</fieldset>
+
+<div id="demo2"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>自定义文本 ： 上一页、下一页、首页、末页统统被替换</legend>
+</fieldset>
+
+<div id="demo3"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>不显示首页、末页</legend>
+</fieldset>
+
+<div id="demo4"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>开启 URL hash</legend>
+</fieldset>
+
+<div id="demo5"></div>
+
+<blockquote class="layui-elem-quote">
+    切换分页后看地址栏的变化（#后面的fenye名字可以随便定义），该功能对于单页应用有着极大的帮助
+</blockquote>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>只显示上一页、下一页</legend>
+</fieldset>
+
+<div id="demo6"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>是时候看一下完整功能了！</legend>
+</fieldset>
+
+<div id="demo7"></div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>将一段已知数组分页展示</legend>
+</fieldset>
+
+<div id="demo8"></div>
+
+<ul id="biuuu_city_list"></ul>
+
+<script src="../lib/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use(['laypage', 'layer'], function(){
+        var laypage = layui.laypage
+                ,layer = layui.layer;
+
+        laypage({
+            cont: 'demo1'
+            ,pages: 100 //总页数
+            ,groups: 5 //连续显示分页数
+        });
+
+        laypage({
+            cont: 'demo2'
+            ,pages: 100
+            ,skin: '#1E9FFF'
+        });
+
+        laypage({
+            cont: 'demo3'
+            ,pages: 100
+            ,first: 1
+            ,last: 100
+            ,prev: '<em><</em>'
+            ,next: '<em>></em>'
+        });
+
+        laypage({
+            cont: 'demo4'
+            ,pages: 100
+            ,first: false
+            ,last: false
+        });
+
+        laypage({
+            cont: 'demo5'
+            ,pages: 100
+            ,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+            ,hash: 'fenye' //自定义hash值
+        });
+
+        laypage({
+            cont: 'demo6'
+            ,pages: 5
+            ,groups: 0
+            ,first: false
+            ,last: false
+            ,jump: function(obj, first){
+                if(!first){
+                    layer.msg('第 '+ obj.curr +' 页');
+                }
+            }
+        });
+
+        laypage({
+            cont: 'demo7'
+            ,pages: 100
+            ,skip: true
+        });
+
+
+        //将一段数组分页展示
+
+        //测试数据
+        var data = [
+            '北京',
+            '上海',
+            '广州',
+            '深圳',
+            '杭州',
+            '长沙',
+            '合肥',
+            '宁夏',
+            '成都',
+            '西安',
+            '南昌',
+            '上饶',
+            '沈阳',
+            '济南',
+            '厦门',
+            '福州',
+            '九江',
+            '宜春',
+            '赣州',
+            '宁波',
+            '绍兴',
+            '无锡',
+            '苏州',
+            '徐州',
+            '东莞',
+            '佛山',
+            '中山',
+            '成都',
+            '武汉',
+            '青岛',
+            '天津',
+            '重庆',
+            '南京',
+            '九江',
+            '香港',
+            '澳门',
+            '台北'
+        ];
+
+        var nums = 5; //每页出现的数据量
+
+        //模拟渲染
+        var render = function(data, curr){
+            var arr = []
+                    ,thisData = data.concat().splice(curr*nums-nums, nums);
+            layui.each(thisData, function(index, item){
+                arr.push('<li>'+ item +'</li>');
+            });
+            return arr.join('');
+        };
+
+        //调用分页
+        laypage({
+            cont: 'demo8'
+            ,pages: Math.ceil(data.length/nums) //得到总页数
+            ,jump: function(obj){
+                document.getElementById('biuuu_city_list').innerHTML = render(data, obj.curr);
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
