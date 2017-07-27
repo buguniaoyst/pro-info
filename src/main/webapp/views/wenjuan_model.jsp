@@ -258,16 +258,6 @@
         });
 
 
-
-        //新增类目明细
-        /* $("#addItemContentBtn").click(function () {
-         //layer.msg("Hello World!");
-
-         console.log()
-         layer.close(layer.index);
-         });*/
-
-
         function putValueToParent(title,content) {
             var table = $("#itemTable");
             var tr = $("<tr>");
