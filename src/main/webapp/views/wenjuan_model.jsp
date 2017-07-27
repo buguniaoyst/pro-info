@@ -79,12 +79,18 @@
             <div class="layui-form-item">
                 <div class="layui-input-block">
                     <input type="button" class="layui-btn"  value="新增一级类目" id="addItemBtn"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input type="button" class="layui-btn"  value="提交" id="addItemSubmit"/>
                     <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
+
         </form>
     </div>
-    <div style="margin-left: 350px;position: absolute;margin-top: -106px;">
+    <div style="margin-left: 350px;position: absolute;margin-top: -171px;">
         <table class="layui-table" style="height: 58px;" lay-even="" lay-skin="row" id="personTable">
             <colgroup>
                 <col width="60">
@@ -108,7 +114,7 @@
 <!--新增类目明细-->
 <div id="additemContent" style="display: none">
     <div style="margin-top: 10px">
-        <form class="layui-form" action="">
+        <form class="layui-form" action="" id="addItemContentForm">
             <div class="layui-form-item">
                 <label class="layui-form-label">问卷项标题</label>
                 <div class="layui-input-block">
@@ -253,6 +259,10 @@
                     var content = layero[0].getElementsByTagName('textarea')[0].value;
                     putValueToParent(title,content);
                     layer.close(index);
+                },
+                end:function (index,layero) {
+                   //弹层关闭   清空表单
+                    $('#addItemContentForm')[0].reset();
                 }
             });
         });
@@ -263,7 +273,7 @@
             var tr = $("<tr>");
             var td0 = $("<td align='center'><input type='checkbox' name='id' value='' lay-skin='primary'></td>")
             var td1 = $("<td align='center'><input type = 'hidden' name='itemTitle' value="+title+"><input type = 'hidden' name='itemContent' value="+content+">"+title+"</td>");
-            var td2 =  $("<td align='center' style='background-color: #1aa094'>已完成</td>");
+            var td2 =  $("<td align='center'><button class='layui-btn layui-btn-small'> <i class='layui-icon'>&#xe615;</i></button><button class='layui-btn layui-btn-small'> <i class='layui-icon'>&#xe642;</i> </button> <button class='layui-btn layui-btn-small'> <i class='layui-icon'>&#xe640;</i> </button></td>");
             td0.appendTo(tr);
             td1.appendTo(tr);
             td2.appendTo(tr);
