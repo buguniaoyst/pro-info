@@ -78,17 +78,13 @@
             <div class="layui-form-item">
                 <div class="layui-input-block">
                     <input type="button" class="layui-btn"  value="新增一级类目" id="addItemBtn"/>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <div class="layui-input-block">
                     <input type="button" class="layui-btn"  value="提交" id="addItemSubmit"/>
-                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                 </div>
             </div>
+
         </form>
     </div>
-    <div style="margin-left: 350px;position: absolute;margin-top: -171px;">
+    <div style="margin-left: 350px;position: absolute;margin-top: -115px;">
         <table class="layui-table" style="height: 58px;" lay-even="" lay-skin="row" id="personTable">
             <colgroup>
                 <col width="60">
@@ -125,7 +121,6 @@
                     <textarea name="itemContent" placeholder="请输入内容，如：项目第一天的任务：1.统一开发环境；2.搭建项目" style="width: 300px;" class="layui-textarea"></textarea>
                 </div>
             </div>
-
             <%-- <div class="layui-form-item">
                  <div class="layui-input-block">
                      <input type="button" class="layui-btn" value="添加" id="addItemContentBtn" />
