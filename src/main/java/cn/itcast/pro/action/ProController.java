@@ -49,7 +49,7 @@ public class ProController {
     @RequestMapping(value = "proinfo_list",method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getProInfoList() {
-        Map<String, Object> resultMap = new HashMap<>();
+        Map<String, Object> resultMap = new HashMap<String, Object>();
         List<Proinfo> proinfoList = proService.queryAll();
 
         resultMap.put("pagesize", 100);

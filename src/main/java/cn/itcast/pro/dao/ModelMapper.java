@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface ModelMapper extends Mapper<Model> {
     List<Model> queryAllModel();
+
+	void saveModel(Model model);
 }

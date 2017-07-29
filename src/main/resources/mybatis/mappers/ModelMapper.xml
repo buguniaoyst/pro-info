@@ -16,10 +16,21 @@
     </resultMap>
 
     <select id="queryAllModel" resultMap="modelResultMap">
-        SELECT m.id mid,m.name,m.status ,mi.*FROM t_model m
-        INNER  JOIN t_model_item  mi
-        ON m.id = mi.pid
+        select * from t_model
     </select>
-
+    <insert id="saveModel"  useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO t_model
+		(
+			id,
+			name,
+            status
+		)
+		VALUES
+		(
+			NULL,
+			#{name},
+			0
+		);
+	</insert>
 
 </mapper>

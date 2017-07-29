@@ -24,8 +24,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day1" value="1" title="已完成">
-                    <input type="radio" name="day1" value="0" title="未完成" checked>
+                    <input type="radio" name="day1" value="1" title="已完成" checked>
+                    <input type="radio" name="day1" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -38,8 +38,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day2" value="1" title="已完成">
-                    <input type="radio" name="day2" value="0" title="未完成" checked>
+                    <input type="radio" name="day2" value="1" title="已完成" checked>
+                    <input type="radio" name="day2" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -52,8 +52,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day3" value="1" title="已完成">
-                    <input type="radio" name="day3" value="0" title="未完成" checked>
+                    <input type="radio" name="day3" value="1" title="已完成" checked>
+                    <input type="radio" name="day3" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -66,8 +66,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day4" value="1" title="已完成">
-                    <input type="radio" name="day4" value="0" title="未完成" checked>
+                    <input type="radio" name="day4" value="1" title="已完成" checked>
+                    <input type="radio" name="day4" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -81,8 +81,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day5" value="1" title="已完成">
-                    <input type="radio" name="day5" value="0" title="未完成" checked>
+                    <input type="radio" name="day5" value="1" title="已完成" checked>
+                    <input type="radio" name="day5" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -95,8 +95,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day6" value="1" title="已完成">
-                    <input type="radio" name="day6" value="0" title="未完成" checked>
+                    <input type="radio" name="day6" value="1" title="已完成" checked>
+                    <input type="radio" name="day6" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -110,8 +110,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day7" value="1" title="已完成">
-                    <input type="radio" name="day7" value="0" title="未完成" checked>
+                    <input type="radio" name="day7" value="1" title="已完成" checked>
+                    <input type="radio" name="day7" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -124,8 +124,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day8" value="1" title="已完成">
-                    <input type="radio" name="day8" value="0" title="未完成" checked>
+                    <input type="radio" name="day8" value="1" title="已完成" checked>
+                    <input type="radio" name="day8" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -138,8 +138,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
                 <div class="layui-input-block">
-                    <input type="radio" name="day9" value="1" title="已完成">
-                    <input type="radio" name="day9" value="0" title="未完成" checked>
+                    <input type="radio" name="day9" value="1" title="已完成" checked>
+                    <input type="radio" name="day9" value="0" title="未完成" >
                 </div>
             </div>
 
@@ -147,7 +147,7 @@
                 <fieldset><legend><a >项目第十天</a></legend></fieldset>
             </div>
             <div class="site-text">
-                <p>项目第十天的任务主要是：</p>
+                <p>项目第十天的任务主要是：1.完成分区添加（分区是要关联区域信息（多表关联插入 ））；2.分区列表查询（b)	多条件组合分页查询 （jquery easyui datagrid 如何设置条件、 spring data 组合条件查询 Specification 接口规范 ））；3.分区查询结果导出 （POI 生成Excel 进行下载 ）；4.采用FastJson 完成json序列化结果集；</p>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
@@ -161,7 +161,7 @@
                 <fieldset><legend><a >项目第十一天</a></legend></fieldset>
             </div>
             <div class="site-text">
-                <p>项目第十一天的任务主要是：</p>
+                <p>项目第十一天的任务主要是：1.完成定区添加功能；2.完成定区条件分页查询；3.完成定区关联客户的功能；</p>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
@@ -175,7 +175,7 @@
                 <fieldset><legend><a >项目第十二天</a></legend></fieldset>
             </div>
             <div class="site-text">
-                <p>项目第十二天的任务主要是：</p>
+                <p>项目第十二天的任务主要是：1.能够完成CRM系统的搭建；2.实现定区关联客户功能；</p>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
@@ -189,7 +189,7 @@
                 <fieldset><legend><a >项目第十三天</a></legend></fieldset>
             </div>
             <div class="site-text">
-                <p>项目第十三天的任务主要是：</p>
+                <p>项目第十三天的任务主要是：1.理解取派模块的业务需求；2.能够完成通过手机号码回显老客户信息；</p>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>
@@ -203,7 +203,7 @@
                 <fieldset><legend><a >项目第十四天</a></legend></fieldset>
             </div>
             <div class="site-text">
-                <p>项目第十四天的任务主要是：</p>
+                <p>项目第十四天的任务主要是：1.能够完成业务受理功能</p>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label" style="background-color: #009688">进度</label>

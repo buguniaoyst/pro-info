@@ -46,17 +46,17 @@
 <!--新增问卷模板-->
 <div id="addModelContent" style="display: none">
     <div style="margin-top: 10px">
-        <form class="layui-form" action="">
+        <form class="layui-form" >
             <div class="layui-form-item">
                 <label class="layui-form-label">问卷名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入问卷名称" style="width: 400px" autocomplete="off" class="layui-input">
+                    <input type="text" name="name" required id="modelnameid"  lay-verify="required" placeholder="请输入问卷名称" style="width: 400px" autocomplete="off" class="layui-input">
                 </div>
             </div>
 
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <input class="layui-btn" id="addModelFormBtn" value="立即提交">
                 </div>
             </div>
         </form>
@@ -145,7 +145,7 @@
         //初始化datagrid
         $.ajax({
             type: "GET",
-            url: "${pageContext.request.contextPath}/json/models.json",
+            url: "${pageContext.request.contextPath}/rest/wenjuan",
             //记得加双引号  T_T
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -214,10 +214,22 @@
 
 
         //监听提交
-        form.on('submit(formDemo)', function(data){
-            layer.msg(JSON.stringify(data.field));
-            return false;
-        });
+        $("#addModelFormBtn").click(function () {
+            //$('#addModelForm').submit();
+            var modelName = $("#modelnameid")[0].value;
+            $.post("${pageContext.request.contextPath}/rest/wenjuan",{"name":modelName},function (result) {
+                if(result) {
+                    layer.close(layer.index);
+                    //刷新列表
+                   // location.href = "${pageContext.request.contextPath}/rest/wenjuan";
+                }else{
+                    layer.alert('添加模板出错了，请联系管理员', {
+                        skin: 'layui-layer-molv' //样式类名
+                        ,closeBtn: 0
+                    });
+                }
+            });
+        })
 
         function lightUser(value){
             layer.confirm('要收藏我吗？', {
@@ -252,6 +264,7 @@
                     var content = layero[0].getElementsByTagName('textarea')[0].value;
                     putValueToParent(title,content);
                     layer.close(index);
+
                 },
                 end:function (index,layero) {
                    //弹层关闭   清空表单
